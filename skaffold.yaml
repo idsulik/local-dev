@@ -9,9 +9,10 @@ build:
       docker:
         dockerfile: ./deploy/Dockerfile
       sync: 
-        manual:  
-          - src: web/
-            dest: /app
+        manual:
+          - src: 'web/**/*.js'
+            dest: '/app'
+            strip: 'web/'
 manifests:
   rawYaml:
     - deploy/kubernetes.yaml

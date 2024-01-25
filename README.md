@@ -7,10 +7,10 @@ docker compose watch
 
 #### Skaffold
 ```bash
-skaffold dev -f deploy/skaffold.yaml --port-forward=pods
+skaffold dev --port-forward=pods
 ```
 
 #### Tilt
 ```bash
-tilt up -f deploy/Tiltfile
+tilt up
 ```

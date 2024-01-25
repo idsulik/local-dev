@@ -1,13 +1,13 @@
-k8s_yaml('kubernetes.yaml')
+k8s_yaml('./deploy/kubernetes.yaml')
 docker_build(
     'skaffold-buildpacks-node', 
-    context='../', 
-    dockerfile='Dockerfile',
+    context='.', 
+    dockerfile='deploy/Dockerfile',
     live_update=[
-        sync('../web', '/app'),
+        sync('./web', '/app'),
         run(
             'cd /app && npm install', 
-            trigger=['../web/package.json']
+            trigger=['./web/package.json']
         )
     ]
 )
